@@ -25,7 +25,8 @@ export default function VideoPlayerModal({ isOpen, videoPath, onClose }: VideoPl
 
   // Transform windows path to custom protocol url
   // "C:\User\..." -> "local-video://C:/User/..."
-  const videoSrc = `local-video://${videoPath.replace(/\\/g, '/')}`;
+  const normalizedPath = videoPath.replace(/\\/g, "/");
+  const videoSrc = `local-video://${encodeURIComponent(normalizedPath)}`;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-md animate-in fade-in duration-300">

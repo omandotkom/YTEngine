@@ -158,5 +158,6 @@ module.exports = {
   downloadYtDlp,
   downloadFfmpeg,
   YTDLP_PATH,
-  FFMPEG_PATH
+  FFMPEG_PATH,
+  FFPROBE_PATH
 };

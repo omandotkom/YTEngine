@@ -6,16 +6,20 @@ import {
   LayoutDashboard, 
   Flame, 
   Download, 
+  Scissors,
   Radio, 
   RefreshCcw, 
   Headphones, 
-  Settings 
+  Settings,
+  Repeat
 } from "lucide-react";
 
 const navItems = [
   { name: "Dashboard", href: "/", icon: LayoutDashboard },
   { name: "Viral Finder", href: "/viral", icon: Flame },
   { name: "Downloader", href: "/downloader", icon: Download },
+  { name: "Video Editor", href: "/editor", icon: Scissors },
+  { name: "Video Extender", href: "/extender", icon: Repeat },
   { name: "Stream Manager", href: "/stream-manager", icon: Radio },
   { name: "Loop Streamer", href: "/looper", icon: RefreshCcw },
   { name: "ASMR Creator", href: "/asmr", icon: Headphones },

@@ -24,4 +24,19 @@ contextBridge.exposeInMainWorld('electronAPI', {
   // Speedtest
   startSpeedtest: () => ipcRenderer.invoke('start-speedtest'),
   onSpeedtestProgress: (callback) => ipcRenderer.on('speedtest-progress', (event, value) => callback(value)),
+
+  // Editor
+  selectMediaFiles: () => ipcRenderer.invoke('select-media-files'),
+  probeMedia: (filePath) => ipcRenderer.invoke('probe-media', filePath),
+  generateProxy: (data) => ipcRenderer.invoke('generate-proxy', data),
+  startRender: (payload) => ipcRenderer.invoke('start-render', payload),
+  cancelRender: (jobId) => ipcRenderer.invoke('cancel-render', jobId),
+  onRenderProgress: (callback) => ipcRenderer.on('editor-render-progress', (event, value) => callback(value)),
+  onRenderComplete: (callback) => ipcRenderer.on('editor-render-complete', (event, value) => callback(value)),
+  onRenderError: (callback) => ipcRenderer.on('editor-render-error', (event, value) => callback(value)),
+  onProxyProgress: (callback) => ipcRenderer.on('editor-proxy-progress', (event, value) => callback(value)),
+
+  // Extender
+  extendVideo: (params) => ipcRenderer.invoke('extend-video', params),
+  onExtenderProgress: (callback) => ipcRenderer.on('extender-progress', (event, value) => callback(value)),
 });
